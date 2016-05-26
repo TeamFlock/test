@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>	
+
+	</head>
+	<body>
+		<script>
+		    // Initialize Firebase
+		    var config = {
+		      apiKey: '***',
+		      // authDomain: '<your-auth-domain>',
+		      databaseURL: '***'
+		      // storageBucket: '<your-storage-bucket>'
+		    };
+		    firebase.initializeApp(config);
+
+		    
+
+
+		    var username;
+
+			firebase.database().ref('/').once('value').then(function(snapshot) {
+				username = snapshot.val();
+				console.log(username);
+			});
+		  </script>
+	</body>
+</html>
