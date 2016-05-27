@@ -11,20 +11,69 @@
 		    var config = {
 		      apiKey: '***',
 		      // authDomain: '<your-auth-domain>',
-		      databaseURL: '***'
+		      databaseURL: 'https://parsley-f4ee0.firebaseio.com/'
 		      // storageBucket: '<your-storage-bucket>'
 		    };
 		    firebase.initializeApp(config);
 
-		    
-
-
-		    var username;
+		    var results;
 
 			firebase.database().ref('/').once('value').then(function(snapshot) {
-				username = snapshot.val();
-				console.log(username);
+				results = snapshot.val();
+				console.log(results);
 			});
+
+			
+
+
+			//PLEASE DON'T RUN THIS DOWN HERE. Be careful when writing to the database lol. But don't worry I backed it up.
+
+
+			// function writeUserData(userId, cusID) {
+			//   firebase.database().ref('/users/' + userId).set({
+			//     cusID: cusID,
+			//     goals: {
+			//     	1: "Placeholder Goal"
+			//     },
+			//     pass: "bacon"
+			//   });
+			// }
+
+
+			
+			// var userNames = ["Swagger",
+			// "Kitkat",
+			// "Ember",
+			// "HeilHydra",
+			// "Bumblebee",
+			// "Baggage",
+			// "DankMeme"]
+
+			
+			
+			// var IDs = ["57479136da6c68a322a1de29",
+			// "574791a1da6c68a322a1de2a",
+			// "574791d9da6c68a322a1de2b",
+			// "5747922bda6c68a322a1de2c",
+			// "57479263da6c68a322a1de2d",
+			// "5747929fda6c68a322a1de2e",
+			// "574792d4da6c68a322a1de2f"]
+
+			// // writeUserData("Hacker","574790f2da6c68a322a1de28");
+
+			// for (var i = 0; i < userNames.length; i++) {
+			// 	// console.log(userNames[i] + IDs[i]);
+			// 	writeUserData(userNames[i], IDs[i]);
+			// }
+
+
+
+
+
+
+
+
+
 		  </script>
 	</body>
 </html>
